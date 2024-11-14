@@ -1,0 +1,135 @@
+<ion-header [translucent]="true" >
+
+
+<ion-content [fullscreen]="true" class="limited-scroll-content">
+  <ion-toolbar class="custom-toolbar">
+    <ion-buttons slot="start">
+      <img [src]="iconhead" class="toolbar-icon" alt="Icon" />
+    </ion-buttons>
+    <ion-title class="custom-title">WEATHER FORECAST</ion-title>
+  </ion-toolbar>
+  
+  
+<ion-card class="card">
+  <ion-searchbar [(ngModel)]="city" animated="true" class="custom" placeholder="Enter City Name" (ionInput)="onCityChange($event)" debounce="200">
+  <ion-button (click)="getUserLocation()">
+    <ion-icon slot="icon-only" name="locate"></ion-icon>
+  </ion-button>
+</ion-searchbar>
+</ion-card>
+<!-- Suggestions list -->
+<div class="suggestions-container" *ngIf="suggestions && suggestions.length > 0">
+  <ion-list>
+    <ion-item *ngFor="let suggestion of suggestions" (click)="selectSuggestion(suggestion)">
+      {{ suggestion.display_name }}
+    </ion-item>
+  </ion-list>
+</div>
+<ion-alert
+  trigger="present-alert"
+  header="Cannot find location"
+  subHeader="We ran into some trouble"
+  message="Please enter a specific location"
+  [buttons]="alertButtons"
+></ion-alert>
+
+  <ion-card class="card">
+    <ion-item lines="none">
+      <p>Today's Report</p>
+      <ion-label id="date" slot="end">{{todayDate | date: "EEE dd MMM"}}</ion-label>
+    </ion-item>
+
+
+    <ion-item lines="none">
+      <span id="temp">
+      {{temperature}}
+      </span>
+      <span>°C</span>
+      <img [src]="printicon" alt="" slot="end">
+    </ion-item>
+
+    <ion-item>
+      <ion-icon id="locationIcon" name="location-sharp" size="large"></ion-icon>
+    <span>{{cityName}}</span>
+    <p slot="end" id="desc">{{description}}</p>
+    </ion-item>
+  </ion-card>
+
+
+
+  <ion-card class="card">
+    <ion-item>
+      <span>Minimum Temp</span>
+      <span slot="end">{{tempMin}}</span>  
+      <ion-icon name="caret-down-outline"  class="hot"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <span>Maximum Temp</span>
+      <span slot="end">{{tempMax}}</span>  
+      <ion-icon name="caret-up-outline" class="cold"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <span> Humidity</span>
+      <span slot="end">{{humidity}}%</span>  
+    </ion-item>
+
+    <ion-item>
+      <span>Wind Speed</span>
+      <span slot="end">{{windSpeed}} m/s</span>  
+    </ion-item>
+    </ion-card>
+
+    <div class="weather-header">
+      <img [src]="iconforecast" alt="">
+      <span class="weather-title">Upcoming Weather Forecast</span>
+      <img [src]="iconforecast" alt="">
+    </div>
+
+<div class="walpeper">
+    <div class="other-info ion-padding">
+      <ion-card class="ion-padding">
+        <div class="info">
+          <p>{{first.date | date: "EEE dd MMM"}}</p>
+          <img [src]="first.iconic" class="mini" alt="">
+          <h3>{{first.temperature}} °C</h3>
+          <h5>{{first.description}}</h5>
+        </div>
+      </ion-card>
+      <ion-card class="ion-padding">
+        <div class="info">
+          <p>{{second.date | date: "EEE dd MMM"}}</p>
+          <img [src]="second.iconic" class="mini" alt="">
+          <h3>{{second.temperature}} °C</h3>
+          <h5>{{second.description}}</h5>
+        </div>
+      </ion-card>
+      <ion-card class="ion-padding">
+        <div class="info">
+          <p>{{third.date | date: "EEE dd MMM"}}</p>
+          <img [src]="third.iconic" class="mini" alt="">
+          <h3>{{third.temperature}} °C</h3>
+          <h5>{{third.description}}</h5>
+        </div>
+      </ion-card>
+      <ion-card class="ion-padding">
+        <div class="info">
+          <p>{{fourth.date | date: "EEE dd MMM"}}</p>
+          <img [src]="fourth.iconic" class="mini" alt="">
+          <h3>{{fourth.temperature}} °C</h3>
+          <h5>{{fourth.description}}</h5>
+        </div>
+      </ion-card>
+      <ion-card class="ion-padding">
+        <div class="info">
+          <p>{{fifth.date | date: "EEE dd MMM"}}</p>
+          <img [src]="fifth.iconic" class="mini" alt="">
+          <h3>{{fifth.temperature}} °C</h3>
+          <h5>{{fifth.description}}</h5>
+        </div>
+      </ion-card>
+      
+    </div>
+</div>
+</ion-content>

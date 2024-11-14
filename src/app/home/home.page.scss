@@ -1,0 +1,175 @@
+.custom-toolbar {
+  --background: #325a4e; /* Background color */
+  --color: white; /* Text color */
+}
+
+.custom-title {
+  font-size: 4vw; /* Font size for the title */
+  font-weight: 400; /* Bold text */
+  text-align: center; /* Center the title */
+  margin-left: auto; /* Push the title to the right */
+  margin-right: auto; /* Push the title to the left */
+  letter-spacing: 2px;
+}
+
+.toolbar-icon {
+  width: 34px;
+  height: 34px;
+  color: white; /* Icon color */
+  margin-left: 5px;
+}
+
+.hot {
+  color:#83111e;
+}
+.cold {
+  color:#1f6feb;
+}
+.card{
+  border-radius: 15px;
+  --ion-background-color:#436d61;
+  
+}
+.title{
+  text-align: center;
+  margin: 15px;
+}
+.titletable{
+  font-weight: 400; 
+  font-size: 1.5em;
+}
+ion-button {
+  --background: #aad3be;
+  --background-hover: #7db599;
+  --background-activated: #88f4be;
+  --background-focused: #88f4be;
+
+  --color: rgb(26, 26, 60);
+  --margin-right:15px;
+ 
+}
+span,p{
+  color: white;
+  font-weight: 200;
+}
+#desc{
+  color: #FFDD49;
+}
+#temp{
+  font-weight: 300;
+  font-size: 2em;
+  margin: 5px;
+}
+#locationIcon{
+  color: #FFDD49;
+}
+#date{
+  color:#FFDD49;
+}
+
+ion-searchbar.custom {
+  --background: #ffffff;
+  --color:black;
+}
+
+.walpeper{
+  background-image: url('https://img.freepik.com/free-vector/abstract-paper-style-background_474888-4053.jpg?t=st=1730926909~exp=1730930509~hmac=fc0fc0bd445debf02f8449387489e6ee618f71e8e44bdf05f2e18d65bd558907&w=740');
+  background-size: cover; /* Makes the background image cover the entire element */
+  background-position: center; /* Centers the image */
+  max-height: max-content;
+}
+
+.weather-header {
+  display: flex;
+  text-align: center;
+  background-color: #436d61; /* Greenish color */
+   /* Adjusted padding for balance */
+  width: 100%;
+ padding:  2px;
+ justify-content: space-between;
+}
+.weather-header img {
+  width: 36px;
+  height: 36px;
+margin: 5px 0px;
+}
+
+.weather-title {
+  color: #ffffff;
+  font-weight: 400; /* Lighter boldness for a softer look */
+  font-size: 1em; /* Slightly larger font size */
+  letter-spacing: 1px; /* Reduced letter spacing for clarity */
+  text-transform: none; /* No capitalization, to feel less rigid */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: inline-block;
+  margin-top: 15px;
+ 
+}
+
+
+
+.other-info{
+  white-space: nowrap;
+  overflow-x: auto;
+  margin-top: 2px;
+  text-align: center;
+
+  ion-card{
+    box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%), 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%);
+       display: inline-block;
+    min-width: 150px;
+    scroll-behavior: smooth;
+    margin-top: 0;
+    margin-right: 15px;
+    
+    background-color: #436d61;
+    .info{
+      
+      margin-top: 1em;
+      text-align: center;
+      h5{
+        font-size: 1em;
+        font-weight:100;
+        color: #ffffff;
+        margin-bottom: 3px;
+      }
+      p{
+        font-size: medium;
+      }
+      h3{
+        font-size: 1.5em;
+        font-weight: bold;
+        letter-spacing: normal;
+        color:  #FFDD49;
+;
+      }
+    }
+  }
+}
+
+.mini{
+  width: 50px;
+}
+
+.suggestions-container {
+  position:fixed;
+  top: 120px; /* Adjust based on where you want the suggestions to appear */
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: rgba(197, 252, 214, 0.123);
+  border: 1px solid #ccc;
+  max-height:40%; /* Limit the height if you have many suggestions */
+  overflow-y: auto; /* Enable scrolling if the suggestions list overflows */
+}
+
+ion-item {
+  padding: 10px;
+  cursor: pointer;
+  --border-style: none;
+}
+
+
+.limited-scroll-content {
+  display: flexbox;
+}
